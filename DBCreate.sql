@@ -8,7 +8,7 @@ CREATE TABLE user(
     id INT NOT NULL AUTO_INCREMENT,
     folio INT,
     userName VARCHAR(40),
-    userPassword VARCHAR(40),
+    userPassword VARCHAR(56),
     phoneNumber VARCHAR(10),
     eMail VARCHAR(40),
     CONSTRAINT userName_u
@@ -59,7 +59,7 @@ CREATE TABLE disease(
 CREATE TABLE administrator(
     id INT NOT NULL AUTO_INCREMENT,
     adminName VARCHAR(40),
-    adminPassword VARCHAR(40),
+    adminPassword VARCHAR(56),
     eMail VARCHAR(40),
     CONSTRAINT adminName_u
     UNIQUE(adminName),
