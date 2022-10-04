@@ -11,6 +11,10 @@ CREATE TABLE user(
     userPassword VARCHAR(40),
     phoneNumber VARCHAR(10),
     eMail VARCHAR(40),
+    CONSTRAINT userName_u
+    UNIQUE(userName),
+    CONSTRAINT email_u
+    UNIQUE(email),
     PRIMARY KEY (id)
 );
 CREATE TABLE food(
@@ -23,6 +27,8 @@ CREATE TABLE food(
     quantity INT,
     stock INT,
     expiration INT,
+    CONSTRAINT foodName_u
+    UNIQUE(foodName),
     PRIMARY KEY (id)
 );
 CREATE TABLE sLocation(
@@ -36,6 +42,8 @@ CREATE TABLE sLocation(
     postalCode VARCHAR(5),
     city VARCHAR(40),
     stateN VARCHAR(40),
+    CONSTRAINT idUser_u
+    UNIQUE(idUser),
     CONSTRAINT fk_sLocation_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
     PRIMARY KEY (id) 
@@ -44,6 +52,8 @@ CREATE TABLE disease(
     id INT NOT NULL AUTO_INCREMENT,
     diseaseName VARCHAR(40),
     disDescription VARCHAR(300),
+    CONSTRAINT diseaseName_u
+    UNIQUE(diseaseName),
     PRIMARY KEY (id)
 );
 CREATE TABLE administrator(
@@ -51,6 +61,10 @@ CREATE TABLE administrator(
     adminName VARCHAR(40),
     adminPassword VARCHAR(40),
     eMail VARCHAR(40),
+    CONSTRAINT adminName_u
+    UNIQUE(adminName),
+    CONSTRAINT eMail_u
+    UNIQUE(eMail),
     PRIMARY KEY (id)
 );
 CREATE TABLE feedback(
@@ -58,10 +72,12 @@ CREATE TABLE feedback(
     feedName VARCHAR(40),
     feedLevel INT,
     feedDescription VARCHAR(300),
+    CONSTRAINT feedName_u
+    UNIQUE(feedName),
     PRIMARY KEY (id)
 );
 CREATE TABLE famMember(
-	id INT NOT NULL AUTO_INCREMENT,
+	  id INT NOT NULL AUTO_INCREMENT,
     idUser INT,
     isLeader VARCHAR(1),
     names VARCHAR(40),
@@ -82,10 +98,12 @@ CREATE TABLE questions(
     question VARCHAR(300),
     questionDescription VARCHAR(300),
     isActive VARCHAR(1),
+    CONSTRAINT question_u
+    UNIQUE(question),
     PRIMARY KEY(id)
 );
 CREATE TABLE questionAnswer(
-	id INT NOT NULL AUTO_INCREMENT,
+	  id INT NOT NULL AUTO_INCREMENT,
     idQuestion INT NOT NULL,
     idUser INT NOT NULL,
     timeAnswered DATETIME,
@@ -94,10 +112,10 @@ CREATE TABLE questionAnswer(
 		FOREIGN KEY(idQuestion) REFERENCES questions(id),
     CONSTRAINT fk_questionAnswer_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
-	PRIMARY KEY(id)
+	  PRIMARY KEY(id)
 );
 CREATE TABLE userFeedback(
-	id INT NOT NULL AUTO_INCREMENT,
+	  id INT NOT NULL AUTO_INCREMENT,
     idUser INT NOT NULL,
     idFeedback INT NOT NULL,
     timeSent DATETIME,
@@ -105,7 +123,7 @@ CREATE TABLE userFeedback(
 		FOREIGN KEY(idUser) REFERENCES user(id),
     CONSTRAINT fk_userFeedback_feedback
 		FOREIGN KEY(idFeedback) REFERENCES feedback(id),
-	PRIMARY KEY(id)
+	  PRIMARY KEY(id)
 );
 CREATE TABLE memberDisease(
     idMember INT NOT NULL,
@@ -116,7 +134,7 @@ CREATE TABLE memberDisease(
 		FOREIGN KEY(idDisease) REFERENCES disease(id)
 );
 CREATE TABLE package(
-	id INT NOT NULL AUTO_INCREMENT,
+	  id INT NOT NULL AUTO_INCREMENT,
     idUser INT NOT NULL,
     idFood INT NOT NULL,
     dateCreated DATE,
@@ -124,7 +142,7 @@ CREATE TABLE package(
 		FOREIGN KEY(idUser) REFERENCES user(id),
     CONSTRAINT fk_package_food
 		FOREIGN KEY(idFood) REFERENCES food(id),
-	PRIMARY KEY(id)
+	  PRIMARY KEY(id)
 );
 CREATE TABLE questionOptions(
     id INT NOT NULL AUTO_INCREMENT,
