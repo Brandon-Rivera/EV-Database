@@ -35,6 +35,8 @@ CREATE TABLE sLocation(
     id INT NOT NULL AUTO_INCREMENT,
     idUser INT NOT NULL,
     placeName VARCHAR(40),
+    lat VARCHAR(40),
+    lon VARCHAR(40),
     street VARCHAR(40),
     extNum VARCHAR(10),
     intNum VARCHAR(10),
