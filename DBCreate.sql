@@ -139,7 +139,7 @@ CREATE TABLE package(
 	  id INT NOT NULL,
     idUser INT NOT NULL,
     idFood INT NOT NULL,
-    quantity INT,
+    quantity INT NOT NULL,
     dateCreated DATE,
     CONSTRAINT fk_package_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
@@ -153,5 +153,22 @@ CREATE TABLE questionOptions(
     optionValue INT,
     CONSTRAINT fk_options_questions
 		FOREIGN KEY(idQuestions) REFERENCES questions(id),
+    PRIMARY KEY(id)
+);
+CREATE TABLE idealValues(
+    id INT NOT NULL AUTO_INCREMENT,
+    person VARCHAR(54),
+    carbohydrates INT,
+    lipids INT,
+    proteins INT,
+    CONSTRAINT person_u
+    UNIQUE(person),
+    PRIMARY KEY(id)
+);
+CREATE TABLE whiteList(
+    id INT NOT NULL AUTO_INCREMENT,
+    email VARCHAR(54),
+    CONSTRAINT email_u
+    UNIQUE(email),
     PRIMARY KEY(id)
 );
