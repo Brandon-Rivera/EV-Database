@@ -62,7 +62,7 @@ VALUES
 (4,"1 taza y media",-5),
 (4,"2 tazas",-6),
 (4,"Más de 2 tazas",-7),
-(4,"Nada (si se seleccionó nunca)",-7),
+(4,"Nada (si se seleccionó nunca)",-8),
 (5,"Muy poco (10% o menos)",0),
 (5,"Poco (11 a 30%)",1),
 (5,"Considerable (31 a 50%)",2),
@@ -70,5 +70,20 @@ VALUES
 (5,"La mayoría (71 a 90%)",4),
 (5,"Casi todo (Más del 90%)",5);
 
-INSERT INTO idealValues(person,carbohydrates,lipids,proteins)
-VALUES()
+INSERT INTO food(foodName,foodDesc,lipidos,carbohidratos,proteinas,quantity,stock,expiration)
+VALUES
+("Leche","",4,12,9,0,),
+("Pollo","",,,,0,),
+("Atún","",,,,0,),
+("Carne de res","",,,,0,),
+("Carne de cerdo","",,,,0,),
+("Huevo","",,,,0,),
+("Arroz","",,,,0,),
+("Tortillas, pan o galletas","",,,,0,),
+("Verduras crudas o cocidas","",,,,0,),
+("Verduras en lata o jugo","",,,,0,),
+("Frutas enteras","",,,,0,),
+("Frutas enlatadas o en jugo","",,,,0,),
+("Frijol, lenteja o garbanzo","",,,,0,),
+("Nuez, cacahuate o pistache","",,,,0,),
+("Refresco","",,,,0,),

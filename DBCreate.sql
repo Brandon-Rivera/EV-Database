@@ -105,7 +105,7 @@ CREATE TABLE questions(
     PRIMARY KEY(id)
 );
 CREATE TABLE questionAnswer(
-	  id INT NOT NULL AUTO_INCREMENT,
+	  id INT,
     idQuestion INT NOT NULL,
     idUser INT NOT NULL,
     timeAnswered DATETIME,
@@ -113,8 +113,7 @@ CREATE TABLE questionAnswer(
     CONSTRAINT fk_questionAnswer_question
 		FOREIGN KEY(idQuestion) REFERENCES questions(id),
     CONSTRAINT fk_questionAnswer_user
-		FOREIGN KEY(idUser) REFERENCES user(id),
-	  PRIMARY KEY(id)
+		FOREIGN KEY(idUser) REFERENCES user(id)
 );
 CREATE TABLE userFeedback(
 	  id INT NOT NULL AUTO_INCREMENT,
