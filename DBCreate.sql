@@ -24,9 +24,9 @@ CREATE TABLE food(
     lipidos INT,
     carbohidratos INT,
     proteinas INT,
-    quantity INT,
-    stock INT,
-    expiration INT,
+    measure VARCHAR(10), --Kilos
+    stock INT, --Vacío
+    expiration INT, --Días
     CONSTRAINT foodName_u
     UNIQUE(foodName),
     PRIMARY KEY (id)
@@ -135,16 +135,15 @@ CREATE TABLE memberDisease(
 		FOREIGN KEY(idDisease) REFERENCES disease(id)
 );
 CREATE TABLE package(
-	  id INT NOT NULL AUTO_INCREMENT,
+	  id INT NOT NULL,
     idUser INT NOT NULL,
     idFood INT NOT NULL,
-    quantity INT NT NUL,
+    quantity INT NOT NULL,
     dateCreated DATE,
     CONSTRAINT fk_package_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
     CONSTRAINT fk_package_food
-		FOREIGN KEY(idFood) REFERENCES food(id),
-	  PRIMARY KEY(id)
+		FOREIGN KEY(idFood) REFERENCES food(id)
 );
 CREATE TABLE questionOptions(
     id INT NOT NULL AUTO_INCREMENT,
