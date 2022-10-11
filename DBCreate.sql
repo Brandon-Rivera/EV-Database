@@ -108,12 +108,16 @@ CREATE TABLE questionAnswer(
 	  id INT,
     idQuestion INT NOT NULL,
     idUser INT NOT NULL,
+    idMember INT NOT NULL,
     timeAnswered DATETIME,
+    idRow INT,
     answer VARCHAR(300),
     CONSTRAINT fk_questionAnswer_question
 		FOREIGN KEY(idQuestion) REFERENCES questions(id),
     CONSTRAINT fk_questionAnswer_user
-		FOREIGN KEY(idUser) REFERENCES user(id)
+		FOREIGN KEY(idUser) REFERENCES user(id),
+    CONSTRAINT fk_questionAnswer_famMember
+		FOREIGN KEY(idMember) REFERENCES famMember(id)
 );
 CREATE TABLE userFeedback(
 	  id INT NOT NULL AUTO_INCREMENT,
