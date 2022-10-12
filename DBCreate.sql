@@ -94,18 +94,27 @@ CREATE TABLE famMember(
 		FOREIGN KEY(idUser) REFERENCES user(id),
     PRIMARY KEY (id)
 );
+CREATE TABLE questionType(
+    id INT NOT NULL AUTO_INCREMENT,
+    qType VARCHAR(54),
+    CONSTRAINT qType_u
+    UNIQUE(qType),
+    PRIMARY KEY(id)
+);
 CREATE TABLE questions(
     id INT NOT NULL AUTO_INCREMENT,
     questionType INT,
     question VARCHAR(300),
     questionDescription VARCHAR(300),
     isActive VARCHAR(1),
+    CONSTRAINT fk_questions_questionType
+		FOREIGN KEY(questionType) REFERENCES questionType(id),
     CONSTRAINT question_u
     UNIQUE(question),
     PRIMARY KEY(id)
 );
 CREATE TABLE questionAnswer(
-	  id INT,
+	  id INT NOT NULL,
     idQuestion INT NOT NULL,
     idUser INT NOT NULL,
     idMember INT NOT NULL,
