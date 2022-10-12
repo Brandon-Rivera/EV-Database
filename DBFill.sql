@@ -1,13 +1,19 @@
 USE BAMX;
 
+INSERT INTO sex(id,sexName)
+VALUES
+(1,"Hombre"),
+(2,"Mujer"),
+(3,"No esecificar");
+
 INSERT INTO questionType(id,qType)
 VALUES
 (1,"Pregunta de respuesta corta"),
 (2,"Pregunta de respuesta larga"),
 (3,"Pregunta de opción múltiple (4 opciones)"),
 (4,"Pregunta de opción múltiple (5 opciones)"),
-(1,"Pregunta en tabla (15*6)"),
-(1,"Pregunta en tabla (15*8)");
+(5,"Pregunta en tabla (15*6)"),
+(6,"Pregunta en tabla (15*8)");
 
 INSERT INTO questions(id,questionType,question,questionDescription,isActive) 
 VALUES

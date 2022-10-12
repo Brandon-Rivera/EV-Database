@@ -78,6 +78,13 @@ CREATE TABLE feedback(
     UNIQUE(feedName),
     PRIMARY KEY (id)
 );
+CREATE TABLE sex(
+    id INT NOT NULL AUTO_INCREMENT,
+    sexName VARCHAR(40),
+    CONSTRAINT sexName_u
+    UNIQUE(sexName),
+    PRIMARY KEY (id)
+);
 CREATE TABLE famMember(
 	  id INT NOT NULL AUTO_INCREMENT,
     idUser INT,
@@ -92,6 +99,8 @@ CREATE TABLE famMember(
     isPregnant VARCHAR(1),
     CONSTRAINT fk_member_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
+    CONSTRAINT fk_member_sex
+		FOREIGN KEY(sex) REFERENCES sex(id),
     PRIMARY KEY (id)
 );
 CREATE TABLE questionType(
