@@ -190,8 +190,15 @@ CREATE TABLE idealValues(
 );
 CREATE TABLE whiteList(
     id INT NOT NULL AUTO_INCREMENT,
-    email VARCHAR(54),
-    CONSTRAINT email_u
-    UNIQUE(email),
+    eMail VARCHAR(54),
+    CONSTRAINT eMail_u
+    UNIQUE(eMail),
+    PRIMARY KEY(id)
+);
+CREATE TABLE validFolio(
+    id INT NOT NULL AUTO_INCREMENT,
+    folio VARCHAR(2),
+    CONSTRAINT folio_u
+    UNIQUE(folio),
     PRIMARY KEY(id)
 );
