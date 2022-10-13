@@ -24,9 +24,9 @@ CREATE TABLE food(
     lipidos INT,
     carbohidratos INT,
     proteinas INT,
-    measure VARCHAR(10), --Kilos
-    stock INT, --Vacío
-    expiration INT, --Días
+    measure VARCHAR(10),
+    stock INT,
+    expiration INT,
     CONSTRAINT foodName_u
     UNIQUE(foodName),
     PRIMARY KEY (id)
@@ -35,8 +35,8 @@ CREATE TABLE sLocation(
     id INT NOT NULL AUTO_INCREMENT,
     idUser INT NOT NULL,
     placeName VARCHAR(40),
-    lat VARCHAR(40),
-    lon VARCHAR(40),
+    lat float,
+    lon float,
     street VARCHAR(40),
     extNum VARCHAR(10),
     intNum VARCHAR(10),
@@ -110,17 +110,24 @@ CREATE TABLE questionType(
     UNIQUE(qType),
     PRIMARY KEY(id)
 );
+
+CREATE TABLE questionOptions(
+    id INT NOT NULL auto_increment,
+    idQuestions INT NOT NULL,
+    optionName VARCHAR(150),
+    optionValue INT,
+    primary key(id)
+);
+
 CREATE TABLE questions(
     id INT NOT NULL AUTO_INCREMENT,
     questionType INT,
     question VARCHAR(300),
     questionDescription VARCHAR(300),
     isActive VARCHAR(1),
-    options INT,
+    qOptions INT,
     CONSTRAINT fk_questions_questionType
 		FOREIGN KEY(questionType) REFERENCES questionType(id),
-    CONSTRAINT fk_questions_questionOptions
-		FOREIGN KEY(options) REFERENCES questionOptions(id),
     CONSTRAINT question_u
     UNIQUE(question),
     PRIMARY KEY(id)
@@ -170,11 +177,7 @@ CREATE TABLE package(
     CONSTRAINT fk_package_food
 		FOREIGN KEY(idFood) REFERENCES food(id)
 );
-CREATE TABLE questionOptions(
-    id INT NOT NULL,
-    optionName VARCHAR(150),
-    optionValue INT,
-);
+
 CREATE TABLE idealValues(
     id INT NOT NULL AUTO_INCREMENT,
     person VARCHAR(54),

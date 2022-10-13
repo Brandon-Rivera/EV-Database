@@ -1,5 +1,3 @@
-USE BAMX;
-
 INSERT INTO sex(id,sexName)
 VALUES
 (1,"Hombre"),
@@ -15,9 +13,9 @@ VALUES
 (5,"Pregunta de opción múltiple (6 opciones)"),
 (6,"Pregunta de opción múltiple (8 opciones)");
 
-INSERT INTO questionOptions(id,optionName,optionValue)
+INSERT INTO questionOptions(idQuestions,optionName,optionValue)
 VALUES
-(0,"",0)
+(0,"",0),
 (1,"1",0),
 (1,"2",1),
 (1,"3",2),
@@ -38,16 +36,16 @@ VALUES
 (4,"Ocasionalmente (2-3 veces por semana)",2),
 (4,"Casi nunca(1 vez por semana o menos)",3),
 (4,"Nunca",4),
-(5,"1/4 de taza (50gr)",),
-(5,"1/2 de taza (100gr)",),
-(5,"3/4 de taza (150gr)",),
-(5,"1 taza (200gr)",),
-(5,"1 taza y media (300gr)",),
-(5,"2 tazas (400gr)",),
-(5,"3 tazas o más (+600gr)",),
-(5,"Nada",);
+(5,"1/4 de taza (50gr)",0),
+(5,"1/2 de taza (100gr)",1),
+(5,"3/4 de taza (150gr)",2),
+(5,"1 taza (200gr)",3),
+(5,"1 taza y media (300gr)",4),
+(5,"2 tazas (400gr)",5),
+(5,"3 tazas o más (+600gr)",6),
+(5,"Nada",7);
 
-INSERT INTO questions(id,questionType,question,questionDescription,isActive) 
+INSERT INTO questions(id,questionType,question,questionDescription,isActive, qOptions) 
 VALUES
 (1,4,"¿Cuántas comidas se hacen al día?","","T",1),
 (2,3,"¿Se añade sal a las comidas preparadas?","","T",2),
