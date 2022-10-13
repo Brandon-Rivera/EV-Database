@@ -116,8 +116,11 @@ CREATE TABLE questions(
     question VARCHAR(300),
     questionDescription VARCHAR(300),
     isActive VARCHAR(1),
+    options INT,
     CONSTRAINT fk_questions_questionType
 		FOREIGN KEY(questionType) REFERENCES questionType(id),
+    CONSTRAINT fk_questions_questionOptions
+		FOREIGN KEY(options) REFERENCES questionOptions(id),
     CONSTRAINT question_u
     UNIQUE(question),
     PRIMARY KEY(id)
@@ -168,13 +171,9 @@ CREATE TABLE package(
 		FOREIGN KEY(idFood) REFERENCES food(id)
 );
 CREATE TABLE questionOptions(
-    id INT NOT NULL AUTO_INCREMENT,
-    idQuestions INT NOT NULL,
+    id INT NOT NULL,
     optionName VARCHAR(150),
     optionValue INT,
-    CONSTRAINT fk_options_questions
-		FOREIGN KEY(idQuestions) REFERENCES questions(id),
-    PRIMARY KEY(id)
 );
 CREATE TABLE idealValues(
     id INT NOT NULL AUTO_INCREMENT,

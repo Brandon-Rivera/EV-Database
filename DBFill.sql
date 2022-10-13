@@ -4,7 +4,7 @@ INSERT INTO sex(id,sexName)
 VALUES
 (1,"Hombre"),
 (2,"Mujer"),
-(3,"No esecificar");
+(3,"No especificado");
 
 INSERT INTO questionType(id,qType)
 VALUES
@@ -12,20 +12,12 @@ VALUES
 (2,"Pregunta de respuesta larga"),
 (3,"Pregunta de opción múltiple (4 opciones)"),
 (4,"Pregunta de opción múltiple (5 opciones)"),
-(5,"Pregunta en tabla (15*6)"),
-(6,"Pregunta en tabla (15*8)");
+(5,"Pregunta de opción múltiple (6 opciones)"),
+(6,"Pregunta de opción múltiple (8 opciones)");
 
-INSERT INTO questions(id,questionType,question,questionDescription,isActive) 
+INSERT INTO questionOptions(id,optionName,optionValue)
 VALUES
-(1,2,"¿Cuántas comidas se hacen al día?","","T"),
-(2,2,"¿Se añade sal a las comidas preparadas?","","T"),
-(3,4,"¿Con qué frecuencia se consumen los siguientes alimentos?","","T"),
-(4,4,"¿En qué cantidad se consumen los alimentos mencionados previamente?","","T"),
-(5,2,"¿Qué porcentaje del ingreso familiar se destinó a la alimentación?","","T"),
-(6,1,"Comentarios adicionales:","","T");
-
-INSERT INTO questionOptions(idQuestions,optionName,optionValue)
-VALUES
+(0,"",0)
 (1,"1",0),
 (1,"2",1),
 (1,"3",2),
@@ -35,55 +27,62 @@ VALUES
 (2,"2 de cada 3 veces",1),
 (2,"1 de cada 3 veces",2),
 (2,"No",3),
-(3,"Leche",0),
-(3,"Pollo",1),
-(3,"Atún",2),
-(3,"Carne de res",3),
-(3,"Carne de cerdo",4),
-(3,"Huevo",5),
-(3,"Arroz",6),
-(3,"Tortilla, pan o galletas",7),
-(3,"Verduras crudas o cocidas",8),
-(3,"Verduras en lata o jugo",9),
-(3,"Frutas enteras",10),
-(3,"Frutas enlatadas o en jugo",11),
-(3,"Frijol lenteja o garbanzo",12),
-(3,"Nuez, cacahuate o pistache",13),
-(3,"Refresco",14),
-(3,"Diario (6 - 7 veces por semana)",-1),
-(3,"Regularmente (4 - 5 veces por semana)",-2),
-(3,"Ocasionalmente (2 - 3 veces por semana)",-3),
-(3,"Casi nunca (1 vez por semana o menos)",-4),
-(3,"Nunca",-5),
-(4,"Leche",0),
-(4,"Pollo",1),
-(4,"Atún",2),
-(4,"Carne de res",3),
-(4,"Carne de cerdo",4),
-(4,"Huevo",5),
-(4,"Arroz",6),
-(4,"Tortilla, pan o galletas",7),
-(4,"Verduras crudas o cocidas",8),
-(4,"Verduras en lata o jugo",9),
-(4,"Frutas enteras",10),
-(4,"Frutas enlatadas o en jugo",11),
-(4,"Frijol lenteja o garbanzo",12),
-(4,"Nuez, cacahuate o pistache",13),
-(4,"Refresco",14),
-(4,"1/4 de taza",-1),
-(4,"1/2 de taza",-2),
-(4,"3/4 de taza",-3),
-(4,"1 taza",-4),
-(4,"1 taza y media",-5),
-(4,"2 tazas",-6),
-(4,"Más de 2 tazas",-7),
-(4,"Nada (si se seleccionó nunca)",-8),
-(5,"Muy poco (10% o menos)",0),
-(5,"Poco (11 a 30%)",1),
-(5,"Considerable (31 a 50%)",2),
-(5,"Una gran parte (51 a 70%",3),
-(5,"La mayoría (71 a 90%)",4),
-(5,"Casi todo (Más del 90%)",5);
+(3,"Muy poco (10% o menos)",0),
+(3,"Poco (11 a 30%)",1),
+(3,"Considerable (31 a 50%)",2),
+(3,"Una gran parte (51 a 70%",3),
+(3,"La mayoría (71 a 90%)",4),
+(3,"Casi todo (Más del 90%)",5),
+(4,"Diario (6-7 veces por semana)",0),
+(4,"Regularmente (4-5 veces por semana)",1),
+(4,"Ocasionalmente (2-3 veces por semana)",2),
+(4,"Casi nunca(1 vez por semana o menos)",3),
+(4,"Nunca",4),
+(5,"1/4 de taza (50gr)",),
+(5,"1/2 de taza (100gr)",),
+(5,"3/4 de taza (150gr)",),
+(5,"1 taza (200gr)",),
+(5,"1 taza y media (300gr)",),
+(5,"2 tazas (400gr)",),
+(5,"3 tazas o más (+600gr)",),
+(5,"Nada",);
+
+INSERT INTO questions(id,questionType,question,questionDescription,isActive) 
+VALUES
+(1,4,"¿Cuántas comidas se hacen al día?","","T",1),
+(2,3,"¿Se añade sal a las comidas preparadas?","","T",2),
+(3,5,"¿Qué porcentaje del ingreso familiar se destinó a la alimentación?","","T",3),
+(4,5,"¿Con qué frecuencia se consume leche?","","T",4),
+(5,6,"¿En qué cantidad se consume leche?","","T",5),
+(6,5,"¿Con qué frecuencia se consume pollo?","","T",4),
+(7,6,"¿En qué cantidad se consume pollo?","","T",5),
+(8,5,"¿Con qué frecuencia se consume atún?","","T",4),
+(9,6,"¿En qué cantidad se consume atún?","","T",5),
+(10,5,"¿Con qué frecuencia se consume carne de res?","","T",4),
+(11,6,"¿En qué cantidad se consume carne de res?","","T",5),
+(12,5,"¿Con qué frecuencia se consume carne de cerdo?","","T",4),
+(13,6,"¿En qué cantidad se consume carne de cerdo?","","T",5),
+(14,5,"¿Con qué frecuencia se consume huevo?","","T",4),
+(15,6,"¿En qué cantidad se consume huevo?","","T",5),
+(16,5,"¿Con qué frecuencia se consume arroz?","","T",4),
+(17,6,"¿En qué cantidad se consume arroz?","","T",5),
+(18,5,"¿Con qué frecuencia se consume tortilla/pan/galletas?","","T",4),
+(19,6,"¿En qué cantidad se consume tortilla/pan/galletas?","","T",5),
+(20,5,"¿Con qué frecuencia se consume verduras (crudas o cocidas)?","","T",4),
+(21,6,"¿En qué cantidad se consume verduras (crudas o cocidas)?","","T",5),
+(22,5,"¿Con qué frecuencia se consume verduras (en lata o jugo)?","","T",4),
+(23,6,"¿En qué cantidad se consume verduras (en lata o jugo)?","","T",5),
+(24,5,"¿Con qué frecuencia se consume frutas enteras?","","T",4),
+(25,6,"¿En qué cantidad se consume frutas enteras?","","T",5),
+(26,5,"¿Con qué frecuencia se consume frutas (enlatadas o en jugo)?","","T",4),
+(27,6,"¿En qué cantidad se consume frutas (enlatadas o en jugo)?","","T",5),
+(28,5,"¿Con qué frecuencia se consume frijol/lenteja/garbanzo?","","T",4),
+(29,6,"¿En qué cantidad se consume frijol/lenteja/garbanzo?","","T",5),
+(30,5,"¿Con qué frecuencia se consume nuez/cacahuate/pistache?","","T",4),
+(31,6,"¿En qué cantidad se consume nuez/cacahuate/pistache?","","T",5),
+(32,5,"¿Con qué frecuencia se consume refresco?","","T",4),
+(33,6,"¿En qué cantidad se consume refresco?","","T",5),
+(34,2,"Comentarios adicionales:","","T",0);
 
 INSERT INTO food(foodName,foodDesc,lipidos,carbohidratos,proteinas,quantity,stock,expiration)
 VALUES
