@@ -11,6 +11,8 @@ CREATE TABLE user(
     userPassword VARCHAR(56),
     phoneNumber VARCHAR(10),
     eMail VARCHAR(40),
+    CONSTRAINT folio_u
+    UNIQUE(folio),
     CONSTRAINT userName_u
     UNIQUE(userName),
     CONSTRAINT email_u
@@ -54,6 +56,7 @@ CREATE TABLE disease(
     id INT NOT NULL AUTO_INCREMENT,
     diseaseName VARCHAR(40),
     disDescription VARCHAR(300),
+    isActive VARCHAR(1),
     CONSTRAINT diseaseName_u
     UNIQUE(diseaseName),
     PRIMARY KEY (id)
@@ -97,6 +100,7 @@ CREATE TABLE famMember(
     weightV FLOAT,
     height FLOAT,
     isPregnant VARCHAR(1),
+    isActive VARCHAR(1),
     CONSTRAINT fk_member_user
 		FOREIGN KEY(idUser) REFERENCES user(id),
     CONSTRAINT fk_member_sex
@@ -110,7 +114,6 @@ CREATE TABLE questionType(
     UNIQUE(qType),
     PRIMARY KEY(id)
 );
-
 CREATE TABLE questionOptions(
     id INT NOT NULL auto_increment,
     idQuestions INT NOT NULL,
@@ -118,7 +121,6 @@ CREATE TABLE questionOptions(
     optionValue INT,
     primary key(id)
 );
-
 CREATE TABLE questions(
     id INT NOT NULL AUTO_INCREMENT,
     questionType INT,
@@ -177,13 +179,13 @@ CREATE TABLE package(
     CONSTRAINT fk_package_food
 		FOREIGN KEY(idFood) REFERENCES food(id)
 );
-
 CREATE TABLE idealValues(
     id INT NOT NULL AUTO_INCREMENT,
     person VARCHAR(54),
     carbohydrates INT,
     lipids INT,
     proteins INT,
+    isActive VARCHAR(1),
     CONSTRAINT person_u
     UNIQUE(person),
     PRIMARY KEY(id)
