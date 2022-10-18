@@ -82,20 +82,20 @@ VALUES
 (33,6,"¿En qué cantidad se consume refresco?","","T",5),
 (34,2,"Comentarios adicionales:","","T",0);
 
-INSERT INTO food(foodName,foodDesc,lipidos,carbohidratos,proteinas,quantity,stock,expiration)
+INSERT INTO food(foodName,foodDesc,lipidos,carbohidratos,proteinas,measure)
 VALUES
-("Leche","",4,12,9,0,),
-("Pollo","",,,,0,),
-("Atún","",,,,0,),
-("Carne de res","",,,,0,),
-("Carne de cerdo","",,,,0,),
-("Huevo","",,,,0,),
-("Arroz","",,,,0,),
-("Tortillas, pan o galletas","",,,,0,),
-("Verduras crudas o cocidas","",,,,0,),
-("Verduras en lata o jugo","",,,,0,),
-("Frutas enteras","",,,,0,),
-("Frutas enlatadas o en jugo","",,,,0,),
-("Frijol, lenteja o garbanzo","",,,,0,),
-("Nuez, cacahuate o pistache","",,,,0,),
-("Refresco","",,,,0,),
+("Leche","",25,12,9,"L"),
+("Pollo","",25,12,9,"Kg"),
+("Atún","",25,12,9,"Kg"),
+("Carne de res","",25,12,9,"Kg"),
+("Carne de cerdo","",25,12,9,"Kg"),
+("Huevo","",25,12,9,"Unidad"),
+("Arroz","",25,12,9,"Kg"),
+("Tortillas, pan o galletas","",25,12,9,"Kg"),
+("Verduras crudas o cocidas","",25,12,9,"Kg"),
+("Verduras en lata o jugo","",25,12,9,"Kg/L"),
+("Frutas enteras","",25,12,9,"Kg"),
+("Frutas enlatadas o en jugo","",25,12,9,"Kg/L"),
+("Frijol, lenteja o garbanzo","",25,12,9,"Kg"),
+("Nuez, cacahuate o pistache","",25,12,9,"Kg"),
+("Refresco","",25,12,9,"L");
