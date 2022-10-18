@@ -99,3 +99,31 @@ VALUES
 ("Frijol, lenteja o garbanzo","",25,12,9,"Kg"),
 ("Nuez, cacahuate o pistache","",25,12,9,"Kg"),
 ("Refresco","",25,12,9,"L");
+
+INSERT INTO disease(diseaseName,disDescription,isActive)
+VALUES
+("Diabetes","","T"),
+("Hipertensión arterial","","T"),
+("Obesidad","","T");
+
+INSERT INTO feedback(feedName,feedLevel,feedDescription)
+VALUES
+("*Evitar la adición de azúcares en la dieta habitual",3,""),
+("*Reducir el consumo de sodio (sal)",3,""),
+("*Evitar preparar sus alimentos fritos y capeados y preferir alimentos asados o en horno",3,""),
+("*Evitar el consumo de grasas trans",3,""),
+("*Consumir alimentos altos en fibra como cereales integrales, leguminosa, verduras",3,""),
+("*Llevar un monitoreo constante para llevar un mejor control",3,""),
+("*Evitar llevar una vida sendentaria, realizando como mínimo 45 minutos de ejercicio al día 3 veces a la semana",3,""),
+
+("*Aumentar el consumo de alimentos de origen vegetal",2,""),
+("*Dimisnuir el consumo de bebidas azucaradas",2,""),
+("*Aumentar la ingesta de alimentos integrales y ricos en fibra",2,""),
+("*Preferir alimentos poco procesados/frescos",2,""),
+("*Realizar ejercicio de manera constante",2,""),
+
+("*Llevar una dieta variada y equilibrada",1,""),
+("*Disminuir el consumo de ácidos grasos saturados y preferir el consumo de acidos grasos mono y poliinsaturados",1,""),
+("*Llevar una alimentación que cubra las necesidades de cada integrante de la familia",1,""),
+("*Realizar ejercicio físico mínimo 30 minutos al día, combinando ejercicios aeróbicos y anaeróbicos",1,"",),
+("*Tomar mínimo 2 litros de agua simple al día para evitar una deshidratación",1,"");
