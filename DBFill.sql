@@ -127,3 +127,23 @@ VALUES
 ("*Llevar una alimentación que cubra las necesidades de cada integrante de la familia",1,"Buena alimentación"),
 ("*Realizar ejercicio físico mínimo 30 minutos al día, combinando ejercicios aeróbicos y anaeróbicos",1,"Ejercicio 1"),
 ("*Tomar mínimo 2 litros de agua simple al día para evitar una deshidratación",1,"Tomar agua");
+
+INSERT INTO idealValues(person,carbohydrates,lipids,proteins,isActive)
+VALUES
+("*Infancia: 0-5 años",16,12,9,"T"),
+("*Niñez: 6-12 años",18,14,11,"T"),
+("*Adolscencia: 12-18 años",36,28,22,"T"),
+("*Adultez: 18-60 años",24,18,17,"T"),
+("*Adulto mayor: +65",22,16,15,"T");
+
+INSERT INTO whiteList(eMail)
+VALUES
+("ej1@ej.ej"),
+("ej2@ej.ej"),
+("ej3@ej.ej");
+
+INSERT INTO validFolio(folio)
+VALUES
+(1),
+(2),
+(3);
